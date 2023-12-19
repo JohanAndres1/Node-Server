@@ -87,3 +87,42 @@ async function ejecutarScriptAsyncAwait() {
 }
 
 ejecutarScriptAsyncAwait();
+
+
+// function ejecutarScriptThen() {
+//   function ejecutarOpciones(opcion) {
+//     switch (opcion) {
+//       case '1':
+//         listarTareas();
+//         ejecutarScriptThen()
+//         break;
+//       case '2':
+//         agregarTarea().then(() => ejecutarScriptThen());
+//         break;
+//       case '3':
+//         eliminarTarea().then(() => ejecutarScriptThen());
+//         break;
+//       case '4':
+//         completarTarea().then(() => ejecutarScriptThen());
+//         break;
+//       case '5':
+//         console.log('Saliendo del programa.');
+//         process.exit();
+//       default:
+//         console.log('Opción no válida. Inténtalo de nuevo.');
+//         ejecutarScriptThen();
+//     }
+//   }
+
+//   console.log('\n--- GESTIÓN DE TAREAS ---');
+//   console.log('1. Listar tareas');
+//   console.log('2. Añadir tarea');
+//   console.log('3. Eliminar tarea');
+//   console.log('4. Completar tarea');
+//   console.log('5. Salir');
+
+//   const opcion = readlineSync.question('Selecciona una opcion: ');
+//   ejecutarOpciones(opcion)
+// }
+
+// ejecutarScriptThen();
