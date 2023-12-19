@@ -5,43 +5,55 @@ let tareas = [];
 function listarTareas() {
   console.log('Lista de tareas:');
   tareas.forEach((tarea, indice) => {
-    console.log(`${indice + 1}. [${tarea.estado ? 'X' : ' '}] ${tarea.descripcion}`);
+    console.log(`${indice + 1}. [${tarea.estado ? '✔' : ' '}] ${tarea.descripcion}`);
   });
 }
 
 function agregarTarea() {
-  const descripcion = readlineSync.question('Introduce la descripcion de la tarea: ');
-  const tarea = {
-    descripcion,
-    estado: false,
-  };
-  tareas.push(tarea);
-  console.log('Tarea añadida con exito.');
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const descripcion = readlineSync.question('Introduce la descripcion de la tarea: ');
+      const tarea = {
+        descripcion,
+        estado: false,
+      };
+      tareas.push(tarea);
+      resolve(console.log('Tarea añadida con éxito.'));
+    }, 2000);
+  });
 }
 
 function eliminarTarea() {
-  listarTareas();
-  const indice = readlineSync.question('Introduce el numero de la tarea que deseas eliminar: ');
-  if (indice >= 1 && indice <= tareas.length) {
-    tareas.splice(indice - 1, 1);
-    console.log('Tarea eliminada con exito.');
-  } else {
-    console.log('Numero de tarea no valido.');
-  }
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      listarTareas();
+      const indice = readlineSync.question('Introduce el numero de la tarea que deseas eliminar: ');
+      if (indice >= 1 && indice <= tareas.length) {
+        tareas.splice(indice - 1, 1);
+        resolve(console.log('Tarea eliminada con éxito.'));
+      } else {
+        resolve(console.log('Numero de tarea no válido.'));
+      }
+    }, 2000);
+  });
 }
 
 function completarTarea() {
-  listarTareas();
-  const indice = readlineSync.question('Introduce el numero de la tarea que deseas marcar como completada: ');
-  if (indice >= 1 && indice <= tareas.length) {
-    tareas[indice - 1].estado = true;
-    console.log('Tarea completada con exito.');
-  } else {
-    console.log('Numero de tarea no valido.');
-  }
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      listarTareas();
+      const indice = readlineSync.question('Introduce el numero de la tarea que deseas marcar como completada: ');
+      if (indice >= 1 && indice <= tareas.length) {
+        tareas[indice - 1].estado = true;
+        resolve(console.log('Tarea completada con éxito.'));
+      } else {
+        resolve(console.log('Numero de tarea no válido.'));
+      }
+    }, 2000);
+  });
 }
 
-function ejecutarScript() {
+async function ejecutarScriptAsyncAwait() {
   while (true) {
     console.log('\n--- GESTIÓN DE TAREAS ---');
     console.log('1. Listar tareas');
@@ -57,13 +69,13 @@ function ejecutarScript() {
         listarTareas();
         break;
       case '2':
-        agregarTarea();
+        await agregarTarea();
         break;
       case '3':
-        eliminarTarea();
+        await eliminarTarea();
         break;
       case '4':
-        completarTarea();
+        await completarTarea();
         break;
       case '5':
         console.log('Saliendo del programa.');
@@ -74,5 +86,4 @@ function ejecutarScript() {
   }
 }
 
-
-ejecutarScript();
+ejecutarScriptAsyncAwait();
