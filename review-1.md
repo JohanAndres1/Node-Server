@@ -5,13 +5,13 @@ Mi producto es una aplicacion web diseñado para facilitar la gestión de tareas
 
 ### Organizar tu tiempo
 
-Crar tareas y objetivos pequeños de algun trabajo, tarea o actividad que tengas por hacer.
+Divide tu proyecto y/o trabajo en pequeñas tareas, asi no abarcaras todo al mismo tiempo
 
 **Beneficios:**
 - Optimiza tu productividasd
-- Mantien un foco o/u objetivo claro
+- Mantien un foco y/o objetivo claro
 
-Esta funcionalidad es esencial para no distraerte entre todas las actividades que tines que hacer, escojes una actividad y la divides en pequeñas tareas.
+Esta funcionalidad es esencial para no distraerte entre todas las actividades que tines que hacer, escojes una actividad y la divides en pequeñas tareas
 
 ---
 
